@@ -38,21 +38,3 @@ MongoClient.connect(url,function(err,db){
 });
 
 
-/*
-MongoClient.connect(url,function(err,db){
-if(err) throw err;
-var dbo=db.db("twitter");
-
-st.stream('bitcoin,ripple',function(result){
-    var myobj=result;
-    var sent=vader.SentimentIntensityAnalyzerSentiment.polarity_scores(result)
-    var location=result.user.location;
-    dbo.collection("customers").insertOne(result,function(err,res){
-        if (err) throw err;
-        
-        
-    }); 
-});
-
-});
-*/
