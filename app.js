@@ -13,6 +13,8 @@ MongoClient.connect(url,function(err,db){
     var a=db.db("twitter");
     st.stream('bitcoin,ripple',function(result){
     var tweett=result.text;
+    
+    
     var geo=result.user.location;
     var obj=[{tweet:tweett,location:geo}]
     a.collection("customers").insert(obj,function(err,res){
