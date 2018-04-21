@@ -1,7 +1,9 @@
 var StreamTweets=require('stream-tweets')
 const vader=require('vader-sentiment');
 var MongoClient=require('mongodb').MongoClient;
-var url="mongodb://localhost:27017";
+var url="mongodb+srv://rahul:counter@twittermining-wy2au.mongodb.net/admin";
+
+
 
 
 
@@ -21,17 +23,18 @@ MongoClient.connect(url,function(err,db){
     // Seconds part from the timestamp
     var seconds = "0" + date.getSeconds();
     var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    var text=result.text;
+    
     console.log(result);
     //getting location
     var geo=result.user.location;
     var obj=[{tweet:data,location:geo,sentiment:sen.compound,time:formattedTime}];
-   // console.log(obj);
+  
     a.collection("data").insert(obj,function(err,res){
         if(err) throw err;
 
 
     });
-
 
     });
 
