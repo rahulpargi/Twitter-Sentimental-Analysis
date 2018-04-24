@@ -38,6 +38,7 @@ MongoClient.connect(url,function(err,db){
     
 
     var obj=[{created_at:result.created_at,tweet:data,location:geo,sentiment:sen.compound,time_zone:tz}];
+    //filter the null and 0 values
     if(geo!=null&&sen.compound!=0&&tz!=null){
     
         a.collection("data").insert(obj,function(err,res){
