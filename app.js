@@ -5,7 +5,7 @@ var url="mongodb://localhost:27017";
 var credentials=require('./api-keys').twitterKeys;
 var st=new StreamTweets(credentials,false);
 var placeLookup = require('place-lookup');
-var apiKey = "AIzaSyAcnaZOe_I6QzuaIK23TkLzCE6LswbX8sw";
+var apiKey = "APIKEY";
 var lat="";
 var lon="";
 
